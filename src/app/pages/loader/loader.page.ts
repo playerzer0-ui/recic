@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-loader',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoaderPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+    // Set a delay before navigating to the login page
+    setTimeout(() => {
+      this.navCtrl.navigateRoot('/login');
+    }, 2000); // 2000ms = 2 seconds delay
   }
 
 }
