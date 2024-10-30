@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header *ngIf="hasHeader">
+    <ion-card-subtitle>Last Pickup Call</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item lines="none">
+      <ion-icon *ngIf="status === 'On Hold'" name="hourglass-outline" slot="start" color="warning"></ion-icon>
+      <ion-icon *ngIf="status === 'Processing'" name="archive-outline" slot="start" color="primary"></ion-icon>
+      <ion-icon *ngIf="status === 'Finished'" name="checkmark-circle-outline" slot="start" color="success"></ion-icon>
+      <ion-label>{{status}} <p>{{updatedAt}}</p></ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        <p>Created at: {{createdAt}}</p>
+        <p>{{notes}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-button *ngIf="hasFooter" color="success" fill="clear" size="full" (click)="navigateToPickupCall()">see all...</ion-button>
+    <ion-item lines="none" *ngIf="isFinished">
+      <ion-icon name="trophy" slot="start" color="success"></ion-icon>
+      <ion-label>$10.00</ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
