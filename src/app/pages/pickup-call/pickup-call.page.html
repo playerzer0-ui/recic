@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>pickup-call</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">pickup-call</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <img src="assets/R.png" alt="">
+  <ion-card>
+    <ion-card-content>
+      <p>Address: fake address</p>
+      <p>Complement: sadasdsad</p>
+      <p>Neighborhood: neighbor A</p>
+      <p>Zip Code: 12341</p>
+      <p>City: state</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item lines="inset">
+      <ion-item>
+        <ion-input label="Notes" labelPlacement="floating" placeholder="Enter notes" type="text"></ion-input>
+      </ion-item>
+    </ion-item>
+  </ion-list>
+  <ion-button color="success" size="full">confirm pickup call</ion-button>
 </ion-content>
